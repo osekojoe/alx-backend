@@ -33,7 +33,7 @@ users = {
 
 
 def get_user(login_as):
-    '''get user'''
+    """get_user"""
     try:
         return users.get(int(login_as))
     except Exception:
@@ -42,8 +42,8 @@ def get_user(login_as):
 
 @app.before_request
 def before_request():
-    '''before request'''
-    g.user = get_user(request.args.get('login_as'))
+    """before_request"""
+    g.user = get_user(request.args.get("login_as"))
 
 
 @babel.localeselector
